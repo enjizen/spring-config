@@ -8,3 +8,16 @@ zuul:
 logging:
   level:
     org.springframework.cloud.netflix: INFO
+
+ribbon:
+  ReadTimeout: 600000
+  ConnectTimout: 120000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 600000
