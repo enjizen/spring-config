@@ -2,6 +2,9 @@ zuul:
   prefix: /api
   ignoredServices: '*'
   routes:
+    auth-service:
+      path: /auth/**
+      stripPrefix: false
     otp:
       path: /otp/**
       stripPrefix: false
