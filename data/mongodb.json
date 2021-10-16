@@ -1,0 +1,59 @@
+
+db.endpoint.insert([
+    {
+        "name": "Add customer profile",
+        "http_method": "POST",
+        "pattern": "/customer/v1/profiles",
+        "is_required_acces_token": false,
+        "last_update_date":new Date(),
+        "is_deleted": false
+    },
+    {
+        "name": "Authentication with email",
+        "http_method": "POST",
+        "pattern": "/auth/v1/authentication/emails",
+        "is_required_acces_token": false,
+        "last_update_date":new Date(),
+        "is_deleted": false
+    }
+]);
+
+
+
+db.client.insert([
+    {
+        "client_id": "AddpX3ofHJAcLs5tJGQIr6UtxTgngiponnrRD2EIxABxnrNmCBFFm",
+        "client_secret": "hAC5PsD1CEKCEMdFf2AiXqqRmAOn9zd5MmUzcANQImUsGyQ9dczUTMZjQaVlOLyXrnONHNhOChWJz7uonjTCT6EFtg5TJ2dFCEvA",
+        "name": "Client for android",
+        "last_update_date":new Date(),
+        "is_suspended": false,
+        "is_deleted": false
+    }
+]);
+
+
+
+
+db.getCollection("endpoint").createIndex({
+    "http_method": 1,
+    "pattern": 1
+},
+{
+    "unique": true
+})
+
+
+db.getCollection("endpoint").createIndex({
+    "id": 1
+},
+{
+    "unique": true
+})
+
+db.getCollection("endpoint").createIndex({
+    "http_method": 1,
+    "pattern": 1
+},
+{
+    "unique": true
+})
